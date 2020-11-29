@@ -125,9 +125,24 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     
     @IBAction func deleteItem(_ sender: UIBarButtonItem) {
-        itemStore.removeItem(self.item)
-        imageStore.deleteImage(forKey: item.itemKey)
-        self.navigationController?.popViewController(animated: true)
+        let title = "Delete \(item.name)?"
+        let message = "Are you sure you want to delete this item?"
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        ac.addAction(cancelAction)
+
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
+                                         handler: { (action) -> Void in
+                                            self.itemStore.removeItem(self.item)
+                                            self.imageStore.deleteImage(forKey: self.item.itemKey)
+            self.navigationController?.popViewController(animated: true)
+        })
+        ac.addAction(deleteAction)
+        
+        // Present the alert controller
+        present(ac, animated: true, completion:  nil)
+        
         
     }
 }
