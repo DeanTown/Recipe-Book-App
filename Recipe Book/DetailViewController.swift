@@ -36,11 +36,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        ingredientsField.layer.borderWidth = 1
+        ingredientsField.layer.cornerRadius = 5
+        
         if (item != nil) {
             nameField.text = item.name
             creatorField.text = item.creator
             timeField.text = item.timeRequired
-            dateLabel.text = "today"
             ingredientsField.text = item.ingredients
             // Get the item key
             let key = item.itemKey

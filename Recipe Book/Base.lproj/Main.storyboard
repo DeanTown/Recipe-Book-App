@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="96" width="414" height="714"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K3X-q8-teT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="385.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GqB-Sq-KRH">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
@@ -148,16 +148,10 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL5-Ef-Zob">
-                                                <rect key="frame" x="0.0" y="126" width="414" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MID-O2-95u">
-                                                <rect key="frame" x="0.0" y="154.5" width="414" height="259.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MID-O2-95u">
+                                                <rect key="frame" x="0.0" y="126" width="414" height="259.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naa-F1-WT5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naa-F1-WT5">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="Lpi-XD-h5y"/>
@@ -168,7 +162,7 @@
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aNX-MQ-ypx">
                                                         <rect key="frame" x="0.0" y="42" width="414" height="217.5"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="217.5" id="6SJ-Up-18J"/>
                                                         </constraints>
@@ -185,7 +179,7 @@
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="AcE-ni-nym">
-                                        <rect key="frame" x="0.0" y="422" width="414" height="292"/>
+                                        <rect key="frame" x="0.0" y="393.5" width="414" height="320.5"/>
                                     </imageView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
@@ -230,7 +224,6 @@
                     <navigationItem key="navigationItem" id="HA9-jO-c0c"/>
                     <connections>
                         <outlet property="creatorField" destination="gK0-RA-Mdo" id="XTK-SA-Da4"/>
-                        <outlet property="dateLabel" destination="TL5-Ef-Zob" id="26a-Z0-0Yc"/>
                         <outlet property="imageView" destination="AcE-ni-nym" id="Kf7-aj-Vmw"/>
                         <outlet property="ingredientsField" destination="aNX-MQ-ypx" id="ZxN-fl-JQm"/>
                         <outlet property="nameField" destination="Op3-oi-pd5" id="v43-AM-hS6"/>

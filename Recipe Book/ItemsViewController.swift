@@ -47,7 +47,7 @@ class ItemsViewController: UITableViewController {
         // Configure the cell with the Item
         cell.nameLabel.text = item.name
         cell.creatorLabel.text = item.creator
-        cell.timeLabel.text = "\(item.timeRequired) min"
+        cell.timeLabel.text = item.timeRequired
         
         return cell
     }
