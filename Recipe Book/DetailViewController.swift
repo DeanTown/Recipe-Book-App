@@ -36,26 +36,22 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        nameField.text = item.name
-        creatorField.text = item.creator
-        timeField.text = item.timeRequired
-//        dateLabel.text = DateFormatter.string(from: "10/13/2020")
-        dateLabel.text = "today"
-        ingredientsField.text = item.ingredients
-//        var ingredientsText = ""
-//        for i in 0...item.ingredients.count - 1{
-//            ingredientsText += "- \(item.ingredients[i])\n"
-//            print(ingredientsText)
-//        }
-//        ingredientsField.text = ingredientsText
-        
-        // Get the item key
-        let key = item.itemKey
-        // If there is an associated image with the item
-        // display it on the image view
-        let imageToDisplay = imageStore.image(forKey: key)
-        imageView.image = imageToDisplay
-        
+        if (item != nil) {
+            nameField.text = item.name
+            creatorField.text = item.creator
+            timeField.text = item.timeRequired
+            dateLabel.text = "today"
+            ingredientsField.text = item.ingredients
+            // Get the item key
+            let key = item.itemKey
+            // If there is an associated image with the item
+            // display it on the image view
+            let imageToDisplay = imageStore.image(forKey: key)
+            imageView.image = imageToDisplay
+        } else {
+            print(item)
+//            item = itemStore.createItem()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,28 +61,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         view.endEditing(true)
         
         // "Save changes to item
-        item.name = nameField.text ?? ""
-        item.timeRequired = timeField.text ?? "0"
-        item.ingredients = ingredientsField.text ?? ""
-//        var ingredientsText: String
-//        if let val = ingredientsField.text {
-//            ingredientsText = val
-//            let ingredients = ingredientsText.components(separatedBy: "- ")
-//            item.ingredients = []
-//            for i in 0...ingredients.count - 1 {
-//                if (ingredients[i] != "") {
-//                    let trimmed = ingredients[i].components(separatedBy: "\n")
-//                    print(trimmed)
-//                    item.ingredients.append(trimmed[0])
-//                }
-//            }
-//        }
-    
-        
-        if let creatorText = creatorField.text {
-            item.creator = creatorText
+        if (nameField.text == "" && ingredientsField.text == "" && timeField.text == "") {
+            itemStore.removeItem(item)
+            print("ITEM NOT INITIALIZED - REMOVING")
         } else {
-            item.creator = "Anonymous"
+            item.name = nameField.text ?? ""
+            item.timeRequired = timeField.text ?? "0"
+            item.ingredients = ingredientsField.text ?? ""
+            
+            if let creatorText = creatorField.text {
+                item.creator = creatorText
+            } else {
+                item.creator = "Anonymous"
+            }
+            print("ITEM DATA SAVED")
         }
         
     }

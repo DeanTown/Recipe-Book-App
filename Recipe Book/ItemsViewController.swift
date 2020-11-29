@@ -24,6 +24,8 @@ class ItemsViewController: UITableViewController {
             
             // Insert this new row into the table
             tableView.insertRows(at: [indexPath], with: .automatic)
+
+            performSegue(withIdentifier: "showItem", sender: self)
         }
     }
     
@@ -109,6 +111,14 @@ class ItemsViewController: UITableViewController {
                 detailViewController.item = item
                 detailViewController.imageStore = imageStore
                 detailViewController.itemStore = itemStore
+                print("EXISTING ITEM")
+            } else {
+                let item = itemStore.allItems.last
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.item = item
+                detailViewController.imageStore = imageStore
+                detailViewController.itemStore = itemStore
+                print("NEW ITEM")
             }
         default:
             preconditionFailure("Unexptected segue identifier")

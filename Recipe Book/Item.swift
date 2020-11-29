@@ -39,7 +39,7 @@ class Item: NSObject, NSCoding {
             
             self.init(name: randomName, ingredients: randomIngredients, timeRequired: "100", creator: "bee")
         } else {
-            self.init(name: "", ingredients: "", timeRequired: "0", creator: nil)
+            self.init(name: "", ingredients: "", timeRequired: "", creator: nil)
         }
     }
     
